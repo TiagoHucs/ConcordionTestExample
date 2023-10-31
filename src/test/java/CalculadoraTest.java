@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 public class CalculadoraTest {
     private Calculadora calculator = new Calculadora();
 
-    public int somar(int a, int b) {
+    public double somar(double a, double b) {
         return calculator.somar(a, b);
     }
 

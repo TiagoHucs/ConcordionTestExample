@@ -2,7 +2,7 @@ package org.example;
 
 public class Calculadora {
 
-    public int somar(int a, int b) {
+    public double somar(double a, double b) {
         return a + b;
     }
 

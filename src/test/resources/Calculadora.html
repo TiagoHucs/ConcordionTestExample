@@ -5,24 +5,74 @@
 </head>
 <body>
 <h1>Teste da Calculadora</h1>
-<div concordion:example="calculadora">
+<p>As especificações do Concordion usam uma folha de estilo atraente que as torna fáceis de ler. Você pode utilizar o poder do HTML com recursos como hiperlinks e imagens para tornar as páginas ainda mais úteis.</p>
+<h2>Testes em linha</h2>
+<div concordion:example="calculadora-inline">
+
+        <h3>Somar</h3>
+        <p>
+            Se o primeiro numero e <span concordion:set="#n1">35</span>
+            e o segundo numero e <span concordion:set="#n2">36</span>
+            <span concordion:execute="#result = somar(#n1,#n2)">quando eu soma-los</span>
+            o resultado sera <span concordion:assert-equals="#result">71.0</span>
+        </p>
+
+        <h3>Diminuir</h3>
+        <p>
+            Se o primeiro numero e <span concordion:set="#n1">50</span>
+            e o segundo numero e <span concordion:set="#n2">18</span>
+            <span concordion:execute="#result = subtrair(#n1,#n2)">quando eu subtrair o primeiro do segundo</span>
+            o resultado sera <span concordion:assert-equals="#result">32</span>
+        </p>
+</div>
+
+<h2>Testes em tabelas</h2>
+<div concordion:example="calculadora-tabela">
 
     <h3>Somar</h3>
-    <p>
-        Se o primeiro numero e <span concordion:set="#n1">35</span>
-        e o segundo numero e <span concordion:set="#n2">36</span>
-        <span concordion:execute="#result = somar(#n1,#n2)">quando eu soma-los</span>
-        o resultado sera <span concordion:assert-equals="#result">71</span>
-    </p>
+    <table concordion:execute="#result = somar(#n1,#n2)">
+        <tr>
+            <th concordion:set="#n1">Primeiro numero</th>
+            <th concordion:set="#n2">Segundo numero</th>
+            <th concordion:assert-equals="#result">Resultado</th>
+        </tr>
+        <tr>
+            <td>10.0</td>
+            <td>15.0</td>
+            <td>25.0</td>
+        </tr>
+        <tr>
+            <td>23.0</td>
+            <td>34.0</td>
+            <td>57.0</td>
+        </tr>
+        <tr>
+            <td>23.7</td>
+            <td>34.1</td>
+            <td>57.8</td>
+        </tr>
+    </table>
 
-    <h3>Diminuir</h3>
-    <p>
-        Se o primeiro numero e <span concordion:set="#n1">50</span>
-        e o segundo numero e <span concordion:set="#n2">18</span>
-        <span concordion:execute="#result = subtrair(#n1,#n2)">quando eu subtrair o primeiro do segundo</span>
-        o resultado sera <span concordion:assert-equals="#result">32</span>
-    </p>
+    <h3>Subtrair</h3>
+    <table concordion:execute="#result = subtrair(#n1,#n2)">
+        <tr>
+            <th concordion:set="#n1">Primeiro numero</th>
+            <th concordion:set="#n2">Segundo numero</th>
+            <th concordion:assert-equals="#result">Resultado</th>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>10</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>23</td>
+            <td>11</td>
+        </tr>
+    </table>
 
 </div>
+
 </body>
 </html>
