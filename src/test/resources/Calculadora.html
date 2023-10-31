@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<head>
+    <title>Teste da Calculadora</title>
+</head>
+<body>
+<h1>Teste da Calculadora</h1>
+<div concordion:example="calculadora">
+
+    <h3>Somar</h3>
+    <p>
+        Se o primeiro numero e <span concordion:set="#n1">35</span>
+        e o segundo numero e <span concordion:set="#n2">36</span>
+        <span concordion:execute="#result = somar(#n1,#n2)">quando eu soma-los</span>
+        o resultado sera <span concordion:assert-equals="#result">71</span>
+    </p>
+
+    <h3>Diminuir</h3>
+    <p>
+        Se o primeiro numero e <span concordion:set="#n1">50</span>
+        e o segundo numero e <span concordion:set="#n2">18</span>
+        <span concordion:execute="#result = subtrair(#n1,#n2)">quando eu subtrair o primeiro do segundo</span>
+        o resultado sera <span concordion:assert-equals="#result">32</span>
+    </p>
+
+</div>
+</body>
+</html>
